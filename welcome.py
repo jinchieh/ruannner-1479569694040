@@ -21,10 +21,15 @@ app = Flask(__name__)
 def Welcome():
     return app.send_static_file('index.html')
 
+@app.route('/startcall')
+def StartCall():
+    return 'About to call Twilio!'
+    
+
 @app.route('/myapp')
 def WelcomeToMyapp():
     return 'Welcome again to my app running on Bluemix!'
-
+    
 @app.route('/api/people')
 def GetPeople():
     list = [
